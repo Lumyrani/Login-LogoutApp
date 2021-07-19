@@ -1,0 +1,72 @@
+<form action="" (ngSubmit)="save()" #myform=ngForm>
+    <div>
+        <label for="">Username</label>
+    </div>
+    <div>
+        <input type="text" class="form control" value="" id="" name="name"
+        [(ngModel)]="home.name" #name="ngModel" >
+    </div>
+
+    <div>
+        <label for="">Email</label>
+    </div>
+    <div>
+        <input type="email" class="form control" value="" id="" name="email"
+        [(ngModel)]="home.email" #email="ngModel" >
+    </div>
+
+    <div>
+        <label for="">password</label>
+    </div>
+    <div>
+        <input type="password" class="form control" value="" id="" name="pass"
+        [(ngModel)]="home.pass" #pass="ngModel" >
+    </div>
+    
+       
+    <div>
+        <label for="">Mobile</label>
+    </div>
+    <div>
+        <input type="tel" class="form control" value="" id="" name="mob"
+        [(ngModel)]="home.mob" #mob="ngModel" >
+    </div>
+
+    
+    <button>save</button>
+</form>
+
+
+<style>
+    table, th, td{
+       border: 1px solid black;
+       border-collapse: collapse;
+       padding: 5px;
+     }
+   </style> 
+<table border:1px>
+
+    
+    <tr>
+       <th>id</th>
+       <th>username</th>
+       <th>email</th>
+       <th>password</th>
+       <th>mobile</th>
+       <th>add</th>
+       <th>remove</th>
+    </tr>
+    <tr *ngFor="let array of userlist">
+        <td>{{array.id}}</td>
+        <td>{{array.name}}</td>
+        <td>{{array.email}}</td>
+        <td>{{array.pass}}</td>
+        <td>{{array.mob}}</td>
+        <td><button (click)="edit(array)">edit</button></td>
+        <td><button (click)="delete(array)">remove</button></td>
+    </tr>
+
+
+</table>
+
+<button (click)="logout()">logout</button>
